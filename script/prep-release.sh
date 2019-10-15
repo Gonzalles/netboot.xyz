@@ -7,13 +7,13 @@ set -e
 mkdir -p build/ipxe
 
 # pull down upstream iPXE
-git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build
+git clone https://github.com/ipxe/ipxe.git ipxe_build
 
 # copy iPXE config overrides into source tree
 cp ipxe/local/* ipxe_build/src/config/local/
 
 # copy certs into source tree
-cp script/*.crt ipxe_build/src/
+cp script/* ipxe_build/src/
 
 # build iPXE disks
 cd ipxe_build/src
